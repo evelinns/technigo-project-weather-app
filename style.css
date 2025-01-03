@@ -51,6 +51,7 @@ p {
 .hero-wrapper > div {
   display: flex;
   justify-content: space-around;
+  padding: 40px 0;
 }
 
 .city-information {

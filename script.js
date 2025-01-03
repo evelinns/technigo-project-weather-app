@@ -5,6 +5,21 @@ window.onload = (event) => {
   const heroText = document.getElementById("hero-text");
   const visibility = document.getElementById("visibility");
   const temp = document.getElementById("temperature");
+  const sunrise = document.getElementById("sunrise");
+  const sunset = document.getElementById("sunset");
+
+  const calculateTime = (time) => {
+    const sunTimestamp = time;
+    const sunTimeMilliseconds = sunTimestamp * 1000;
+    const sunDate = new Date(sunTimeMilliseconds);
+    const hours = sunDate.getHours();
+    const minutes = sunDate.getMinutes();
+    const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}`;
+
+    return formattedTime;
+  };
 
   const fetchWeatherData = () => {
     fetch(weatherAPIUrl)
@@ -15,16 +30,16 @@ window.onload = (event) => {
         let city = data.name;
         let cityVisibility = data.weather[0].description;
         let cityTemp = data.main.temp;
-
-        const timeNow = Date.now();
-        let sunrise = data.sys.sunrise;
-        let sunset = data.sys.sunset;
+        let timeOfSunrise = calculateTime(data.sys.sunrise);
+        let timeOfSunset = calculateTime(data.sys.sunset);
 
         heroText.innerHTML = city;
         visibility.innerHTML = cityVisibility;
         temp.innerHTML = `${Math.round(cityTemp)}<span>°C</span>`;
+        sunrise.innerHTML = timeOfSunrise;
+        sunset.innerHTML = timeOfSunset;
 
-        console.log((timeNow - sunrise) / 1000 / 3600);
+        console.log(data);
       });
   };
 
