@@ -59,10 +59,22 @@ p {
   flex-direction: column;
 }
 
-.daily-breakdown {
-  justify-content: center;
+#daily-breakdown {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background: white;
+  color: black;
   height: 70%;
   color: black;
+}
+
+.daily-breakdown img {
+  width: 30px;
+  height: auto;
+}
+
+.day-breakdown {
+  display: flex;
+  justify-content: space-around;
 }
