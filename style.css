@@ -11,8 +11,8 @@ body {
 
 #hero-gradient {
   background: linear-gradient(#8589ff, #e8e9ff);
-  width: 200%;
-  height: 100%;
+  width: 200vw;
+  height: 100vh;
   position: absolute;
   border-radius: 50%;
   display: flex;

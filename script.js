@@ -29,10 +29,10 @@ window.onload = (event) => {
       gradientHero.style.background = "linear-gradient(#8589FF, #E8E9FF)";
     } else if (weather === "Clouds" || weather === "Snow") {
       dayNightImg.src = cloudImg;
-      gradientHero.style.background = "linear-gradient(#666666, #403e3e)";
+      gradientHero.style.background = "linear-gradient(#cbcbcb, #4e4e4e)";
     } else {
       dayNightImg.src = sunImg;
-      gradientHero.style.background = "linear-gradient(#ed6300, #ff7b0f)";
+      gradientHero.style.background = "linear-gradient(#ffcd57, #ed6300)";
     }
   };
 
