@@ -22,14 +22,17 @@ window.onload = (event) => {
     const time = new Date().getHours();
 
     if (sunset <= time) {
-      dayNightImg.src = moonStarImg;
+      dayNightImg.src = moonImg;
       gradientHero.style.background = "linear-gradient(#6264A2, #222350)";
     } else if (weather === "Rain") {
       dayNightImg.src = sunCloudImg;
+      gradientHero.style.background = "linear-gradient(#8589FF, #E8E9FF)";
     } else if (weather === "Clouds" || weather === "Snow") {
       dayNightImg.src = cloudImg;
+      gradientHero.style.background = "linear-gradient(#666666, #403e3e)";
     } else {
       dayNightImg.src = sunImg;
+      gradientHero.style.background = "linear-gradient(#ed6300, #ff7b0f)";
     }
   };
 
@@ -96,15 +99,7 @@ window.onload = (event) => {
           item.dt_txt.endsWith("12:00:00")
         );
 
-        const daysOfWeek = [
-          "Sunday",
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ];
+        const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
         const filteredWithDays = filteredWeatherData.map((item) => {
           const date = new Date(item.dt_txt);
